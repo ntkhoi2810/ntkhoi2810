@@ -1,0 +1,209 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="896" height="380" viewBox="0 0 896 380" fill="none">
+
+  <style>
+    :root {
+      /* Solar System Pastel Palette - Light Mode */
+      --sun-core: #d97706;
+      --sun-glow: rgba(245, 158, 11, 0.25);
+      --sun-ring: #f59e0b;
+
+      --mercury: #64748b;    /* NumPy: Slate Pearlescent */
+      --venus: #ca8a04;      /* Scikit-Learn: Golden Cream */
+      --earth: #0284c7;      /* Python: Cyan Ocean Blue */
+      --mars: #e11d48;       /* PyTorch: Coral Crimson */
+      --jupiter: #ea580c;    /* TensorFlow: Amber Terracotta */
+      --saturn: #d97706;     /* Deep Learning: Warm Sand Gold */
+      --uranus: #0d9488;     /* Representation Learning: Aquamarine Cyan */
+      --neptune: #4f46e5;    /* Knowledge Graph: Celestial Cosmic Indigo */
+
+      --orbit-line: #e2e8f0;
+      --orbit-line-dashed: #cbd5e1;
+      --cosmic-star: #cbd5e1;
+      --font-mono: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        /* Solar System Pastel Palette - Dark Mode (Luminous Pastels) */
+        --sun-core: #fde047;
+        --sun-glow: rgba(253, 224, 71, 0.25);
+        --sun-ring: #facc15;
+
+        --mercury: #cbd5e1;    /* NumPy: Pale Silver Slate */
+        --venus: #fef08a;      /* Scikit-Learn: Soft Cream Yellow */
+        --earth: #38bdf8;      /* Python: Luminous Sky Blue */
+        --mars: #fb7185;       /* PyTorch: Pastel Rose / Coral */
+        --jupiter: #fb923c;    /* TensorFlow: Pastel Peach Amber */
+        --saturn: #fcd34d;     /* Deep Learning: Pastel Golden Sand */
+        --uranus: #5eead4;     /* Representation Learning: Pastel Mint Cyan */
+        --neptune: #a5b4fc;    /* Knowledge Graph: Pastel Celestial Violet */
+
+        --orbit-line: #1e293b;
+        --orbit-line-dashed: #334155;
+        --cosmic-star: #475569;
+      }
+    }
+
+    /* ── Orbit Tracks ── */
+    .orbit-track {
+      fill: none;
+      stroke: var(--orbit-line);
+      stroke-width: 0.8;
+    }
+    .orbit-track-dashed {
+      fill: none;
+      stroke: var(--orbit-line-dashed);
+      stroke-width: 0.8;
+      stroke-dasharray: 4 6;
+    }
+
+    /* ── Center Core (Sun: AI Research) ── */
+    .core-text {
+      font-family: var(--font-mono);
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.16em;
+      fill: var(--sun-core);
+      text-anchor: middle;
+      dominant-baseline: central;
+      animation: core-pulse 4s ease-in-out infinite alternate;
+      transform-origin: 448px 190px;
+    }
+    @keyframes core-pulse {
+      0% { opacity: 0.88; transform: scale(0.97); }
+      100% { opacity: 1; transform: scale(1.03); }
+    }
+
+    .core-ring {
+      fill: none;
+      stroke: var(--sun-ring);
+      stroke-width: 0.8;
+      animation: ring-pulse 4s ease-in-out infinite;
+      transform-origin: 448px 190px;
+    }
+    @keyframes ring-pulse {
+      0% { transform: scale(0.9); opacity: 0.5; }
+      50% { transform: scale(1.15); opacity: 0.15; }
+      100% { transform: scale(0.9); opacity: 0.5; }
+    }
+
+
+    /* ── Planet Typography and Dots ── */
+    .planet-text {
+      font-family: var(--font-mono);
+      font-weight: 600;
+      font-size: 11.5px;
+      letter-spacing: 0.04em;
+      dominant-baseline: central;
+    }
+
+    /* Planet Specific Theme Classes */
+    .p-python { fill: var(--earth); }
+    .p-numpy { fill: var(--mercury); }
+    .p-pytorch { fill: var(--mars); }
+    .p-tensorflow { fill: var(--jupiter); }
+    .p-scikit { fill: var(--venus); }
+    .p-deeplearning { fill: var(--saturn); }
+    .p-representation { fill: var(--uranus); }
+    .p-knowledgegraph { fill: var(--neptune); }
+
+    /* ── Cosmic background stars ── */
+    .cosmic-dot {
+      fill: var(--cosmic-star);
+      opacity: 0.4;
+    }
+  </style>
+
+  <!-- Cosmic subtle grid dots -->
+  <g class="cosmic-dot">
+    <circle cx="80" cy="50" r="1"/><circle cx="820" cy="60" r="1"/>
+    <circle cx="120" cy="330" r="1"/><circle cx="780" cy="320" r="1"/>
+    <circle cx="448" cy="30" r="0.8"/><circle cx="448" cy="350" r="0.8"/>
+  </g>
+
+  <!-- ════════ ORBITAL TRACKS ════════ -->
+  <ellipse cx="448" cy="190" rx="115" ry="46" class="orbit-track"/>
+  <ellipse cx="448" cy="190" rx="195" ry="78" class="orbit-track-dashed"/>
+  <ellipse cx="448" cy="190" rx="280" ry="112" class="orbit-track"/>
+  <ellipse cx="448" cy="190" rx="365" ry="144" class="orbit-track-dashed"/>
+
+
+  <!-- ════════ CENTER SUN: AI RESEARCH ════════ -->
+  <ellipse cx="448" cy="190" rx="72" ry="24" class="core-ring"/>
+  <circle cx="365" cy="190" r="2.5" class="core-dot"/>
+  <circle cx="531" cy="190" r="2.5" class="core-dot"/>
+  <text x="448" y="190" class="core-text">AI Research</text>
+
+
+  <!-- ════════ ORBIT 1: INNER (Python - Earth, NumPy - Mercury) ════════ -->
+  <!-- Planet: Python (Earth Cyan-Blue) -->
+  <g>
+    <animateMotion dur="20s" repeatCount="indefinite"
+      path="M 563 190 A 115 46 0 1 1 333 190 A 115 46 0 1 1 563 190"/>
+    <circle cx="0" cy="0" r="2.8" class="p-python"/>
+    <text x="7" y="0" class="planet-text p-python">Python</text>
+  </g>
+
+  <!-- Planet: NumPy (Mercury Slate) -->
+  <g>
+    <animateMotion dur="20s" begin="-10s" repeatCount="indefinite"
+      path="M 563 190 A 115 46 0 1 1 333 190 A 115 46 0 1 1 563 190"/>
+    <circle cx="0" cy="0" r="2.5" class="p-numpy"/>
+    <text x="6" y="0" class="planet-text p-numpy">NumPy</text>
+  </g>
+
+
+  <!-- ════════ ORBIT 2: MID-INNER (PyTorch - Mars, TensorFlow - Jupiter, Scikit - Venus) ════════ -->
+  <!-- Planet: PyTorch (Mars Coral Rose) -->
+  <g>
+    <animateMotion dur="32s" repeatCount="indefinite"
+      path="M 643 190 A 195 78 0 1 1 253 190 A 195 78 0 1 1 643 190"/>
+    <circle cx="0" cy="0" r="3" class="p-pytorch"/>
+    <text x="7" y="0" class="planet-text p-pytorch">PyTorch</text>
+  </g>
+
+  <!-- Planet: TensorFlow (Jupiter Peach Amber) -->
+  <g>
+    <animateMotion dur="32s" begin="-10.66s" repeatCount="indefinite"
+      path="M 643 190 A 195 78 0 1 1 253 190 A 195 78 0 1 1 643 190"/>
+    <circle cx="0" cy="0" r="2.8" class="p-tensorflow"/>
+    <text x="6" y="0" class="planet-text p-tensorflow">TensorFlow</text>
+  </g>
+
+  <!-- Planet: Scikit-Learn (Venus Cream Yellow) -->
+  <g>
+    <animateMotion dur="32s" begin="-21.33s" repeatCount="indefinite"
+      path="M 643 190 A 195 78 0 1 1 253 190 A 195 78 0 1 1 643 190"/>
+    <circle cx="0" cy="0" r="2.5" class="p-scikit"/>
+    <text x="6" y="0" class="planet-text p-scikit">Scikit-Learn</text>
+  </g>
+
+
+  <!-- ════════ ORBIT 3: MID-OUTER (Deep Learning - Saturn, Representation - Uranus) ════════ -->
+  <!-- Planet: Deep Learning (Saturn Golden Sand) -->
+  <g>
+    <animateMotion dur="45s" repeatCount="indefinite"
+      path="M 728 190 A 280 112 0 1 1 168 190 A 280 112 0 1 1 728 190"/>
+    <circle cx="0" cy="0" r="3" class="p-deeplearning"/>
+    <text x="7" y="0" class="planet-text p-deeplearning">Deep Learning</text>
+  </g>
+
+  <!-- Planet: Representation Learning (Uranus Mint Cyan) -->
+  <g>
+    <animateMotion dur="45s" begin="-22.5s" repeatCount="indefinite"
+      path="M 728 190 A 280 112 0 1 1 168 190 A 280 112 0 1 1 728 190"/>
+    <circle cx="0" cy="0" r="3" class="p-representation"/>
+    <text x="7" y="0" class="planet-text p-representation">Representation Learning</text>
+  </g>
+
+
+  <!-- ════════ ORBIT 4: OUTER (Knowledge Graph - Neptune Celestial Violet) ════════ -->
+  <!-- Planet: Knowledge Graph (Neptune Celestial Violet/Indigo) -->
+  <g>
+    <animateMotion dur="58s" repeatCount="indefinite"
+      path="M 813 190 A 365 144 0 1 1 83 190 A 365 144 0 1 1 813 190"/>
+    <circle cx="0" cy="0" r="3.5" class="p-knowledgegraph"/>
+    <text x="8" y="0" class="planet-text p-knowledgegraph">Knowledge Graph</text>
+  </g>
+
+</svg>

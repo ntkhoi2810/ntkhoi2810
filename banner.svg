@@ -1,0 +1,307 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="896" height="320" viewBox="0 0 896 320" fill="none">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fafafa"/>
+      <stop offset="50%" stop-color="#f5f5f5"/>
+      <stop offset="100%" stop-color="#efefef"/>
+    </linearGradient>
+
+    <!-- Name Gradient -->
+    <linearGradient id="name-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#000000"/>
+      <stop offset="55%" stop-color="#1a1a1a"/>
+      <stop offset="100%" stop-color="#3f3f46"/>
+    </linearGradient>
+
+    <!-- Glow Filters for Light Theme -->
+    <filter id="soft-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <linearGradient id="line-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="25%" stop-color="#000000" stop-opacity="0.4"/>
+      <stop offset="50%" stop-color="#1a1a1a" stop-opacity="0.75"/>
+      <stop offset="75%" stop-color="#000000" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="quote-line" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#d4d4d8" stop-opacity="0"/>
+      <stop offset="30%" stop-color="#a1a1aa" stop-opacity="0.5"/>
+      <stop offset="50%" stop-color="#71717a" stop-opacity="0.7"/>
+      <stop offset="70%" stop-color="#a1a1aa" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#d4d4d8" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;800&amp;display=swap');
+
+    :root {
+      --bg: #ffffff;
+      --text-main: #0a0a0a;
+      --text-muted: #52525b;
+      --text-dim: #a1a1aa;
+      --accent: #1a1a1a;
+      --grid-line: #e4e4e7;
+      --math-formula: #71717a;
+    }
+
+    .bg-rect { fill: url(#bg-gradient); }
+
+    .name-title {
+      font-family: 'Playwrite VN';
+      font-weight: 550;
+      font-size: 28px;
+      letter-spacing: 0.2em;
+      fill: url(#name-grad);
+      filter: drop-shadow(0px 2px 5px rgba(255, 255, 255, 0.95));
+    }
+
+    .quote-text {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      font-style: italic;
+      font-size: 11px;
+      letter-spacing: 0.03em;
+      fill: var(--text-muted);
+      filter: drop-shadow(0px 1px 2px rgba(255, 255, 255, 0.8));
+    }
+
+    .quote-author {
+      font-family: 'Orbitron', 'Space Grotesk', 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 9px;
+      letter-spacing: 0.16em;
+      fill: var(--accent);
+      font-style: normal;
+    }
+
+    /* Spacetime Grid */
+    .spacetime-grid {
+      stroke: var(--grid-line);
+      stroke-width: 0.7;
+      fill: none;
+      opacity: 0.6;
+    }
+
+    /* Lensing Beams */
+    .lensing-beam {
+      fill: none;
+      stroke: #52525b;
+      stroke-width: 0.75;
+      stroke-dasharray: 6 12;
+      opacity: 0.35;
+      animation: beamFlow 12s linear infinite;
+    }
+
+    @keyframes beamFlow {
+      0% { stroke-dashoffset: 0; }
+      100% { stroke-dashoffset: -108; }
+    }
+
+    /* Particles */
+    .quantum-dot { fill: #1a1a1a; opacity: 0.15; }
+    .qd-1 { animation: qBlink 3.2s ease-in-out infinite; }
+    .qd-2 { animation: qBlink 4.5s ease-in-out infinite 1.2s; }
+    .qd-3 { animation: qBlink 2.8s ease-in-out infinite 0.7s; }
+    .qd-4 { animation: qBlink 5.1s ease-in-out infinite 2.1s; }
+    .qd-accent { fill: #000000; opacity: 0.5; }
+
+    @keyframes qBlink {
+      0%, 100% { opacity: 0.1; transform: scale(0.8); }
+      50% { opacity: 0.6; transform: scale(1.3); }
+    }
+
+    /* Orbiting Photons */
+    .photon-orbit { transform-origin: 448px 148px; animation: photonSpin 8s linear infinite; }
+    .photon-orbit-rev { transform-origin: 448px 148px; animation: photonSpinRev 14s linear infinite; }
+
+    @keyframes photonSpin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    @keyframes photonSpinRev { 0% { transform: rotate(360deg); } 100% { transform: rotate(0deg); } }
+
+    /* Fluid Waves */
+    .fluid-wave-line {
+      fill: none;
+      stroke: #a1a1aa;
+      stroke-width: 0.5;
+      opacity: 0;
+      transform-origin: 448px 148px;
+    }
+
+    .wave-1 { animation: fluidWave 6s cubic-bezier(0.2, 0.8, 0.4, 1) infinite; }
+    .wave-2 { animation: fluidWave 6s cubic-bezier(0.2, 0.8, 0.4, 1) infinite 2s; }
+    .wave-3 { animation: fluidWave 6s cubic-bezier(0.2, 0.8, 0.4, 1) infinite 4s; }
+
+    @keyframes fluidWave {
+      0%   { transform: scale(1);  opacity: 0.45; stroke-width: 1px; }
+      50%  { opacity: 0.2; }
+      100% { transform: scale(14); opacity: 0;    stroke-width: 0.4px; }
+    }
+
+    /* ============ MATH FORMULAS (scattered + floating) ============ */
+    .math-formula {
+      font-family: 'Cambria Math', 'Georgia', 'Times New Roman', serif;
+      font-style: italic;
+      fill: var(--math-formula);
+      user-select: none;
+    }
+
+    /* Each formula floats on its own rhythm */
+    .math-formula g text {
+      animation: floatA 12s ease-in-out infinite;
+    }
+    .math-formula g:nth-child(2n) text { animation-name: floatB; animation-duration: 15s; }
+    .math-formula g:nth-child(3n) text { animation-name: floatC; animation-duration: 18s; }
+    .math-formula g:nth-child(4n) text { animation-delay: -4s; }
+    .math-formula g:nth-child(5n) text { animation-delay: -7s; }
+    .math-formula g:nth-child(7n) text { animation-delay: -2.5s; animation-duration: 20s; }
+
+    @keyframes floatA {
+      0%, 100% { transform: translate(0px, 0px); }
+      25%      { transform: translate(4px, -3px); }
+      50%      { transform: translate(-3px, 2px); }
+      75%      { transform: translate(2px, 3px); }
+    }
+    @keyframes floatB {
+      0%, 100% { transform: translate(0px, 0px); }
+      30%      { transform: translate(-5px, 3px); }
+      60%      { transform: translate(4px, -2px); }
+    }
+    @keyframes floatC {
+      0%, 100% { transform: translate(0px, 0px); }
+      20%      { transform: translate(3px, 4px); }
+      55%      { transform: translate(-4px, -3px); }
+      80%      { transform: translate(2px, -2px); }
+    }
+  </style>
+
+  <!-- Canvas Background -->
+  <rect width="896" height="320" class="bg-rect"/>
+
+  <!-- ==================== SCATTERED FLOATING MATH FORMULAS ==================== -->
+  <g class="math-formula">
+    <!-- Top band -->
+    <g transform="translate(40 42) rotate(-2)"><text font-size="12" opacity="0.4">∇ × E = −∂B/∂t</text></g>
+    <g transform="translate(210 64) rotate(3)"><text font-size="13" opacity="0.3">e<tspan baseline-shift="super" font-size="8">iπ</tspan> + 1 = 0</text></g>
+    <g transform="translate(360 36) rotate(-1)"><text font-size="11" opacity="0.33">iℏ ∂/∂t = ĤΨ</text></g>
+    <g transform="translate(520 58) rotate(2)"><text font-size="10" opacity="0.28">∇ · B = 0</text></g>
+    <g transform="translate(640 40) rotate(-2)"><text font-size="11" opacity="0.36">ds² = −c²dt² + dx² + dy² + dz²</text></g>
+    <g transform="translate(866 64) rotate(1)"><text font-size="10" opacity="0.3" text-anchor="end">F = G m₁m₂ / r²</text></g>
+
+    <!-- Upper middle -->
+    <g transform="translate(70 96) rotate(-3)"><text font-size="10" opacity="0.28">ζ(s) = Σ 1/nˢ</text></g>
+    <g transform="translate(200 110) rotate(2)"><text font-size="12" opacity="0.34">ΔxΔp ≥ ℏ/2</text></g>
+    <g transform="translate(330 90) rotate(-1)"><text font-size="9.5" opacity="0.3">∮ B · dl = μ₀I + μ₀ε₀ dΦ<tspan baseline-shift="sub" font-size="7">E</tspan>/dt</text></g>
+    <g transform="translate(560 92) rotate(-2)"><text font-size="11" opacity="0.3">S = k<tspan baseline-shift="sub" font-size="7">B</tspan> ln Ω</text></g>
+    <g transform="translate(690 108) rotate(2)"><text font-size="12" opacity="0.35">∇²φ = −ρ/ε₀</text></g>
+    <g transform="translate(866 88) rotate(-1)"><text font-size="9.5" opacity="0.3" text-anchor="end">R<tspan baseline-shift="sub" font-size="7">μν</tspan> − ½Rg<tspan baseline-shift="sub" font-size="7">μν</tspan> + Λg<tspan baseline-shift="sub" font-size="7">μν</tspan> = κT<tspan baseline-shift="sub" font-size="7">μν</tspan></text></g>
+
+    <!-- Middle sides + faint large behind name -->
+    <g transform="translate(40 150) rotate(-1)"><text font-size="11" opacity="0.32">∫<tspan baseline-shift="sub" font-size="7">−∞</tspan><tspan baseline-shift="super" font-size="7">∞</tspan> e<tspan baseline-shift="super" font-size="7">−x²</tspan> dx = √π</text></g>
+    <g transform="translate(60 178) rotate(2)"><text font-size="9.5" opacity="0.28">P(A|B) = P(B|A)P(A)/P(B)</text></g>
+    <g transform="translate(866 150) rotate(-2)"><text font-size="10" opacity="0.3" text-anchor="end">ρ(∂v/t + v·∇v) = −∇p + μ∇²v</text></g>
+    <g transform="translate(866 178) rotate(1)"><text font-size="9.5" opacity="0.28" text-anchor="end">Γ(z) = ∫<tspan baseline-shift="sub" font-size="7">0</tspan><tspan baseline-shift="super" font-size="7">∞</tspan> t<tspan baseline-shift="super" font-size="7">z−1</tspan> e<tspan baseline-shift="super" font-size="7">−t</tspan> dt</text></g>
+    <g transform="translate(300 150) rotate(-8)"><text font-size="16" opacity="0.07">∫ f(x) dx</text></g>
+    <g transform="translate(560 168) rotate(6)"><text font-size="16" opacity="0.07">Σ xᵢ</text></g>
+
+    <!-- Lower middle -->
+    <g transform="translate(60 208) rotate(-2)"><text font-size="11" opacity="0.33">det(A − λI) = 0</text></g>
+    <g transform="translate(210 228) rotate(2)"><text font-size="10" opacity="0.3">lim<tspan baseline-shift="sub" font-size="7">x→0</tspan> (sin x)/x = 1</text></g>
+    <g transform="translate(380 212) rotate(-1)"><text font-size="10" opacity="0.3">∂L/∂q − d/dt(∂L/∂q̇) = 0</text></g>
+    <g transform="translate(560 228) rotate(2)"><text font-size="10.5" opacity="0.32">∇ × B = μ₀J + μ₀ε₀ ∂E/∂t</text></g>
+    <g transform="translate(866 212) rotate(-2)"><text font-size="10" opacity="0.3" text-anchor="end">E = mc²/√(1 − v²/c²)</text></g>
+
+    <!-- Bottom band -->
+    <g transform="translate(90 262) rotate(-3)"><text font-size="12" opacity="0.35">a² + b² = c²</text></g>
+    <g transform="translate(250 280) rotate(1)"><text font-size="11" opacity="0.3">∂²u/∂t² = c²∇²u</text></g>
+    <g transform="translate(430 266) rotate(-2)"><text font-size="10" opacity="0.3">Σᵢ₌₁ⁿ i = n(n+1)/2</text></g>
+    <g transform="translate(610 276) rotate(2)"><text font-size="11" opacity="0.32">H = −Σ p log p</text></g>
+    <g transform="translate(780 262) rotate(-1)"><text font-size="12" opacity="0.35">∇ · E = ρ/ε₀</text></g>
+  </g>
+
+  <!-- ==================== SPACETIME GRID ==================== -->
+  <g class="spacetime-grid">
+    <path d="M 0,25 Q 448,34 896,25" />
+    <path d="M 0,55 Q 448,74 896,55" />
+    <path d="M 0,85 Q 448,118 896,85" />
+    <path d="M 0,115 Q 350,145 448,148 Q 546,145 896,115" stroke-dasharray="3 4"/>
+    <path d="M 0,148 Q 330,148 448,148 Q 566,148 896,148" stroke-dasharray="2 6" opacity="0.3"/>
+    <path d="M 0,181 Q 350,151 448,148 Q 546,151 896,181" stroke-dasharray="3 4"/>
+    <path d="M 0,211 Q 448,178 896,211" />
+    <path d="M 0,241 Q 448,222 896,241" />
+    <path d="M 0,271 Q 448,262 896,271" />
+
+    <path d="M 70,0 Q 110,148 70,320" />
+    <path d="M 160,0 Q 210,148 160,320" />
+    <path d="M 250,0 Q 320,148 250,320" />
+    <path d="M 340,0 Q 400,148 340,320" />
+    <path d="M 448,0 L 448,320" stroke-dasharray="2 6" opacity="0.3"/>
+    <path d="M 556,0 Q 496,148 556,320" />
+    <path d="M 646,0 Q 576,148 646,320" />
+    <path d="M 736,0 Q 686,148 736,320" />
+    <path d="M 826,0 Q 786,148 826,320" />
+  </g>
+
+  <!-- Lensing Beams -->
+  <path d="M 0,90 C 280,90 380,126 448,126 C 516,126 616,90 896,90" class="lensing-beam" />
+  <path d="M 0,206 C 280,206 380,170 448,170 C 516,170 616,206 896,206" class="lensing-beam" />
+
+  <!-- Fluid Waves -->
+  <circle cx="448" cy="148" r="10" class="fluid-wave-line wave-1" vector-effect="non-scaling-stroke"/>
+  <circle cx="448" cy="148" r="10" class="fluid-wave-line wave-2" vector-effect="non-scaling-stroke"/>
+  <circle cx="448" cy="148" r="10" class="fluid-wave-line wave-3" vector-effect="non-scaling-stroke"/>
+
+  <!-- ==================== QUANTUM NODES AND ORBITING PARTICLES ==================== -->
+  <circle cx="70" cy="55" r="1.2" class="quantum-dot qd-1"/>
+  <circle cx="160" cy="85" r="1" class="quantum-dot qd-2"/>
+  <circle cx="250" cy="211" r="1.5" class="quantum-dot qd-3 qd-accent"/>
+  <circle cx="646" cy="85" r="1.2" class="quantum-dot qd-4"/>
+  <circle cx="736" cy="211" r="1" class="quantum-dot qd-1 qd-accent"/>
+  <circle cx="826" cy="55" r="1.4" class="quantum-dot qd-2"/>
+  <circle cx="120" cy="270" r="1" class="quantum-dot qd-3"/>
+  <circle cx="780" cy="265" r="1.2" class="quantum-dot qd-4"/>
+
+  <!-- Orbiting Photons -->
+  <ellipse cx="448" cy="148" rx="142" ry="46" stroke="#52525b" stroke-width="0.5" stroke-dasharray="3 8" opacity="0.25"/>
+  <ellipse cx="448" cy="148" rx="180" ry="58" stroke="#a1a1aa" stroke-width="0.5" opacity="0.2"/>
+
+  <g class="photon-orbit">
+    <circle cx="590" cy="148" r="2.2" fill="#1a1a1a" filter="url(#soft-shadow)"/>
+  </g>
+  <g class="photon-orbit-rev">
+    <circle cx="306" cy="148" r="1.5" fill="#52525b" opacity="0.6"/>
+  </g>
+
+  <!-- ==================== CENTERPIECE: USER NAME ==================== -->
+  <g>
+    <!-- Top and Bottom Accent Edge Lines -->
+    <line x1="328" y1="112" x2="568" y2="112" stroke="url(#line-grad)" stroke-width="1.8"/>
+    <line x1="368" y1="184" x2="528" y2="184" stroke="url(#line-grad)" stroke-width="1.2"/>
+
+    <!-- Coordinate HUD Marks -->
+    <path d="M 306,122 L 306,118 L 310,118" stroke="#1a1a1a" stroke-width="1.2" fill="none" opacity="0.7"/>
+    <path d="M 590,122 L 590,118 L 586,118" stroke="#1a1a1a" stroke-width="1.2" fill="none" opacity="0.7"/>
+    <path d="M 306,174 L 306,178 L 310,178" stroke="#1a1a1a" stroke-width="1.2" fill="none" opacity="0.7"/>
+    <path d="M 590,174 L 590,178 L 586,178" stroke="#1a1a1a" stroke-width="1.2" fill="none" opacity="0.7"/>
+
+    <!-- Center Crosshairs -->
+    <circle cx="448" cy="148" r="1.5" fill="#1a1a1a" opacity="0.5"/>
+
+    <!-- Name Text -->
+    <text x="448" y="146" text-anchor="middle" dominant-baseline="middle" class="name-title">Thái Khôi</text>
+  </g>
+
+  <!-- ==================== BOTTOM: QUOTE ==================== -->
+  <line x1="160" y1="286" x2="736" y2="286" stroke="url(#quote-line)" stroke-width="0.8"/>
+
+  <text x="448" y="303" text-anchor="middle">
+    <tspan class="quote-text">"Imagination is more important than knowledge. Knowledge is limited. Imagination encircles the world."</tspan>
+    <tspan dx="10" class="quote-author">— ALBERT EINSTEIN</tspan>
+  </text>
+</svg>

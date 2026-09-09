@@ -1,42 +1,48 @@
-<div align="center">
+<p align="center">
+  <img src="research_banner_v8_quantum_wavepacket_scattering.svg" width="100%" alt="Research banner — computer science, AI, mathematics and physics, illustrated with quantum wave-packet scattering" />
+</p>
 
-<img src="research_banner_v5.svg" width="100%" alt="Banner" />
+<br />
 
-<br/>
+<p align="center"><sub>RESEARCH · LEARNING · TEACHING</sub></p>
 
-<a href="https://your-portfolio.com"><code>[ portfolio ]</code></a> &nbsp;&bull;&nbsp;
-<a href="https://linkedin.com/in/your-linkedin"><code>[ linkedin ]</code></a> &nbsp;&bull;&nbsp;
-<a href="https://github.com/your-username"><code>[ github ]</code></a> &nbsp;&bull;&nbsp;
-<a href="mailto:your-email@gmail.com"><code>[ email ]</code></a>
+<h1 align="center">AI Researcher &amp; Teaching Assistant</h1>
 
-</div>
+<p align="center">Vietnam &nbsp;·&nbsp; Ton Duc Thang University</p>
 
----
+<p align="center">
+  Exploring knowledge graphs and representation learning<br />
+  through deep learning research.
+</p>
 
-## `🌿` About Me
+<br />
 
-I'm an **AI Researcher** based in **Vietnam**, passionate about pushing the boundaries of Knowledge Graph research.
+### About
 
-Currently serving as a **Teaching Assistant** at **Ton Duc Thang University**.
+I'm an AI researcher based in Vietnam, with a focus on **knowledge graphs** and **representation learning**. I currently serve as a **Teaching Assistant at Ton Duc Thang University**, alongside my research interests in deep learning.
 
-- 🔬 **Focus**: `Deep Learning` · `Knowledge Graph` · `Representation Learning`
-- 🎓 **Education**: Ton Duc Thang University (TDTU)
-- 🌐 **Languages**: Vietnamese (Native) · English (CEFR B2)
+<br />
 
----
+### Research interests
 
-## `⚡` Tech Stack & Research Network
+**Deep Learning** &nbsp; / &nbsp; **Knowledge Graph** &nbsp; / &nbsp; **Representation Learning**
 
-<div align="center">
+<br />
 
-<img src="skills.svg" width="100%" alt="Neural Tech Stack Network" />
+### Background
 
-</div>
+- **Current role** — Teaching Assistant, Ton Duc Thang University
+- **Education** — Ton Duc Thang University (TDTU)
+- **Languages** — Vietnamese (native) · English (CEFR B2)
 
----
+<br />
 
-<div align="center">
+### Tools & technologies
 
-<!-- <img src="footer.svg" width="100%" alt="Starfall Footer"/> -->
+Python, NumPy, scikit-learn, PyTorch and TensorFlow — connected to my research interests below.
 
-</div>
+<p align="center">
+  <img src="skills.svg" width="100%" alt="AI research ecosystem — Python, NumPy, scikit-learn, PyTorch and TensorFlow, alongside deep learning, representation learning and knowledge graphs" />
+</p>
+
+<!-- Add verified portfolio, LinkedIn and email links here when available. -->

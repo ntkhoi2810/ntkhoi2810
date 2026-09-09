@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="banner.svg" width="100%" alt="Banner" />
+<img src="research_banner_v5.svg" width="100%" alt="Banner" />
 
 <br/>
 
@@ -37,6 +37,6 @@ Currently serving as a **Teaching Assistant** at **Ton Duc Thang University**.
 
 <div align="center">
 
-<img src="footer.svg" width="100%" alt="Starfall Footer"/>
+<!-- <img src="footer.svg" width="100%" alt="Starfall Footer"/> -->
 
 </div>

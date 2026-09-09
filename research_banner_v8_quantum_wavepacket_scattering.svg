@@ -1,7 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" width="100%" height="auto" role="img" aria-label="Research banner: computer science, AI, mathematics and physics">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" width="1200" height="320" style="max-width:100%;height:auto" role="img" aria-labelledby="banner-title banner-description">
 
-  <title>Researcher Banner — CS · AI · Mathematics · Physics</title>
-  <desc>Script-free quantum wave-packet scattering visualization: localized Gaussian packets overlap at an interaction region, form a brief interference field, then redistribute into outgoing probability amplitudes.</desc>
+  <title id="banner-title">Researcher Banner — CS · AI · Mathematics · Physics</title>
+  <desc id="banner-description">A Feynman quote beside a schematic of coherent wave packets approaching an interaction region, interfering and scattering into outgoing channels. Equations describe Schrödinger evolution, probability density, normalization, unitary scattering and gradient descent. This is an illustrative animation, not a numerical simulation. Adapts to light, dark and reduced-motion preferences.</desc>
 
   <defs>
 
@@ -41,7 +41,7 @@
 
     </linearGradient>
 
-    *<!-- Reusable particle symbol -->*
+    <!-- Reusable particle symbol -->
 
     <g id="p-blue">
       <circle r="1.35" fill="#2563EB"/>
@@ -63,7 +63,7 @@
       <circle r="2.55" fill="#D97706" opacity="0.120"/>
     </g>
 
-    *<!-- Motion paths (not rendered directly) -->*
+    <!-- Motion paths (not rendered directly) -->
 
     <path id="ringOuter" d="M 720,160 A 260,140 0 1,0 1240,160 A 260,140 0 1,0 720,160 Z" fill="none"/>
 
@@ -106,41 +106,50 @@
       <circle cx="0" cy="0" r="31"/>
     </clipPath>
 
+    <!-- Tapered carrier and smooth Gaussian-like envelopes; shared by both channels. -->
+    <path id="packet-envelope" d="M -32,0 C -23,0 -20,-2 -14,-7 C -7,-15 7,-15 14,-7 C 20,-2 23,0 32,0 M -32,0 C -23,0 -20,2 -14,7 C -7,15 7,15 14,7 C 20,2 23,0 32,0"/>
+    <path id="packet-carrier" d="M -32,0 Q -29,-.6 -26,0 Q -23,1.6 -20,0 Q -17,-5 -14,0 Q -11,12 -8,0 Q -4,-22 0,0 Q 4,22 8,0 Q 11,-12 14,0 Q 17,5 20,0 Q 23,-1.6 26,0 Q 29,.6 32,0"/>
     <g id="wavepacket-blue">
-      <ellipse rx="17" ry="7.8" fill="url(#wpBlueGrad)" filter="url(#packetBlur)"/>
-      <ellipse rx="12.5" ry="4.9" fill="none" stroke="#2563EB" stroke-width="0.55" opacity="0.22"/>
-      <path d="M -13,0 C -11,-4.2 -9,-4.2 -7,0 S -3,4.2 -1,0 S 3,-4.2 5,0 S 9,4.2 13,0"
-            fill="none" stroke="#2563EB" stroke-width="0.95" stroke-linecap="round" opacity="0.78">
-        <animate attributeName="opacity" values="0.48;0.90;0.48" dur="1.05s" repeatCount="indefinite"/>
-      </path>
-      <circle r="1.15" fill="#2563EB" opacity="0.86"/>
+      <ellipse rx="34" ry="14" fill="url(#wpBlueGrad)" filter="url(#packetBlur)"/>
+      <g fill="none" stroke="#2563EB" stroke-linecap="round">
+        <use href="#packet-envelope" stroke-width="0.65" opacity="0.3"/>
+        <use href="#packet-carrier" stroke-width="1.25" opacity="0.9"/>
+      </g>
     </g>
-
     <g id="wavepacket-violet">
-      <ellipse rx="17" ry="7.8" fill="url(#wpVioletGrad)" filter="url(#packetBlur)"/>
-      <ellipse rx="12.5" ry="4.9" fill="none" stroke="#7C3AED" stroke-width="0.55" opacity="0.20"/>
-      <path d="M -13,0 C -11,4.2 -9,4.2 -7,0 S -3,-4.2 -1,0 S 3,4.2 5,0 S 9,-4.2 13,0"
-            fill="none" stroke="#7C3AED" stroke-width="0.95" stroke-linecap="round" opacity="0.74">
-        <animate attributeName="opacity" values="0.44;0.86;0.44" dur="0.92s" repeatCount="indefinite"/>
-      </path>
-      <circle r="1.10" fill="#7C3AED" opacity="0.82"/>
+      <ellipse rx="34" ry="14" fill="url(#wpVioletGrad)" filter="url(#packetBlur)"/>
+      <g fill="none" stroke="#7C3AED" stroke-linecap="round">
+        <use href="#packet-envelope" stroke-width="0.65" opacity="0.3"/>
+        <use href="#packet-carrier" transform="scale(1 -1)" stroke-width="1.25" opacity="0.9"/>
+      </g>
+    </g>
+    <g id="channel-guides" fill="none" stroke-width="0.8" stroke-linecap="round">
+      <path d="M 410,84 C 500,103 578,132 650,165" stroke="#2563EB" opacity="0.2"/>
+      <path d="M 930,246 C 838,225 752,197 650,165" stroke="#7C3AED" opacity="0.2"/>
+      <g stroke-dasharray="2 6" opacity="0.22">
+        <path d="M 650,165 C 722,129 805,88 900,58" stroke="#2563EB"/>
+        <path d="M 650,165 C 755,162 872,155 1012,118" stroke="#7C3AED"/>
+        <path d="M 650,165 C 732,198 820,235 910,264" stroke="#2563EB"/>
+        <path d="M 650,165 C 590,196 515,228 430,252" stroke="#7C3AED"/>
+      </g>
     </g>
 
     <style>
 
-      <![CDATA[
+      <![CDATA[
 
-        @media (prefers-reduced-motion: reduce) {
+        .still-scattering { display: none; }
+        .eyebrow { font-size: 9px; letter-spacing: .18em; }
+        .equation { font-size: 14px; }
+        .annotation { font-size: 9px; letter-spacing: .04em; }
+        @media (prefers-reduced-motion: reduce) {
+          .anim, .motion-only { display: none; }
+          .still-scattering { display: inline; }
+        }
 
-          .anim, .anim * { animation: none !important; }
+        .quote-serif { font-family: Georgia, "Times New Roman", serif; }
 
-          animate, animateMotion, animateTransform { display: none; }
-
-        }
-
-        .quote-serif { font-family: Georgia, "Times New Roman", serif; }
-
-        .sci-mono { font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace; }
+        .sci-mono { font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace; }
         .math {
           font-family: "STIX Two Math", "Cambria Math", "STIXGeneral", "Times New Roman", serif;
           font-kerning: normal;
@@ -149,13 +158,47 @@
         .math .var { font-style: italic; }
         .math .roman { font-style: normal; }
 
-      ]]>
+        /* Override the light palette's presentation attributes in dark mode. */
+        @media (prefers-color-scheme: dark) {
+          #bgGrad stop[offset="0%"] { stop-color: #0D1117; }
+          #bgGrad stop[offset="55%"] { stop-color: #111827; }
+          #bgGrad stop[offset="100%"] { stop-color: #151B2C; }
+          #vignette stop { stop-color: #020617; }
 
-    </style>
+          [fill="#1F2937"] { fill: #E6EDF3; }
+          [fill="#334155"] { fill: #CBD5E1; }
+          [fill="#475569"] { fill: #94A3B8; }
+          [fill="#64748B"] { fill: #94A3B8; }
+          [stroke="#334155"] { stroke: #CBD5E1; }
+          [stroke="#475569"] { stroke: #94A3B8; }
+          [stroke="#64748B"] { stroke: #94A3B8; }
+          [stroke="#94A3B8"] { stroke: #CBD5E1; }
+          [stroke="#CBD5E1"] { stroke: #475569; }
+          [stroke="#E2E4DF"] { stroke: #30363D; }
+          [stop-color="#334155"] { stop-color: #CBD5E1; }
+
+          /* Luminous accents also recolor the reusable wave-packet symbols. */
+          [fill="#2563EB"] { fill: #60A5FA; }
+          [stroke="#2563EB"] { stroke: #60A5FA; }
+          [stop-color="#2563EB"] { stop-color: #60A5FA; }
+          [fill="#0891B2"] { fill: #22D3EE; }
+          [stroke="#0891B2"] { stroke: #22D3EE; }
+          [stop-color="#0891B2"] { stop-color: #22D3EE; }
+          [fill="#7C3AED"] { fill: #A78BFA; }
+          [stroke="#7C3AED"] { stroke: #A78BFA; }
+          [stop-color="#7C3AED"] { stop-color: #A78BFA; }
+          [fill="#D97706"] { fill: #FBBF24; }
+          [fill="#FFFFFF"] { fill: #EFF6FF; }
+          [stop-color="#FFFFFF"] { stop-color: #EFF6FF; }
+        }
+
+      ]]>
+
+    </style>
 
   </defs>
 
-  *<!-- LAYER 0 : background -->*
+  <!-- LAYER 0 : background -->
 
   <rect x="0" y="0" width="1200" height="320" fill="url(#bgGrad)"/>
 
@@ -235,49 +278,22 @@
 
   </g>
 
-  *<!-- scattered coordinate labels / equations, background texture -->*
+  <!-- Editorial hierarchy: research identity, governing equation, probability. -->
+  <g class="sci-mono" fill="#64748B">
+    <!-- <text x="56" y="37" class="eyebrow">RESEARCH NOTES / 01</text> -->
+    <!-- <text x="56" y="57" font-size="9" letter-spacing=".08em">CS · AI · MATHEMATICS · PHYSICS</text> -->
+    <text x="430" y="32" class="eyebrow">QUANTUM WAVE-PACKET SCATTERING</text>
+    <text x="970" y="32" class="eyebrow">BORN RULE</text>
+  </g>
+  <g class="math equation" fill="#334155" opacity="0.85">
+    <text x="430" y="56">iℏ ∂<tspan class="var">ψ</tspan>/∂<tspan class="var">t</tspan> = [−ℏ<tspan baseline-shift="super" font-size="9">2</tspan>/(2<tspan class="var">m</tspan>) ∇<tspan baseline-shift="super" font-size="9">2</tspan> + <tspan class="var">V</tspan>]<tspan class="var">ψ</tspan></text>
+    <text x="970" y="56"><tspan class="var">ρ</tspan>(<tspan class="var">x</tspan>, <tspan class="var">t</tspan>) = |<tspan class="var">ψ</tspan>(<tspan class="var">x</tspan>, <tspan class="var">t</tspan>)|<tspan baseline-shift="super" font-size="9">2</tspan></text>
+  </g>
+  <line x1="386" y1="32" x2="386" y2="288" stroke="#CBD5E1" stroke-width="0.7" opacity="0.45"/>
 
-  <g fill="#334155">
+  <!-- sparse graph / computational nodes -->
 
-    <text x="46" y="38" class="math" font-size="11" opacity="0.28">10<tspan baseline-shift="super" font-size="7.5">−9</tspan><tspan class="roman"> m</tspan></text>
-
-    <text x="46" y="54" class="math" font-size="11" opacity="0.22"><tspan class="var">σ</tspan> = 0.014</text>
-
-    <text x="140" y="298" class="math" font-size="11" opacity="0.20">Δ<tspan class="var">x</tspan> · Δ<tspan class="var">p</tspan> ≥ ℏ⁄2</text>
-
-    <text x="905" y="40" class="math" font-size="12" opacity="0.30"><tspan class="var">E</tspan> = <tspan class="var">m</tspan><tspan class="var">c</tspan><tspan baseline-shift="super" font-size="8">2</tspan></text>
-
-    <text x="1040" y="286" class="math" font-size="11" opacity="0.24"><tspan class="var">ψ</tspan>(<tspan class="var">x</tspan>, <tspan class="var">t</tspan>)</text>
-
-    <text x="360" y="46" class="math" font-size="11" opacity="0.22">∇ · Σ</text>
-
-    <text x="520" y="300" class="math" font-size="11" opacity="0.20"><tspan class="var">λ</tspan> = 632.8<tspan class="roman"> nm</tspan></text>
-
-    <text x="860" y="230" class="math roman" font-size="11" opacity="0.22">GeV</text>
-
-    <text x="720" y="60" class="math" font-size="12" opacity="0.26"><tspan class="var">φ</tspan>, <tspan class="var">μ</tspan>, <tspan class="var">τ</tspan></text>
-
-    <text x="200" y="120" class="sci-mono" font-size="10" opacity="0.18">01001 10110</text>
-
-    <text x="1100" y="60" class="math" font-size="10" opacity="0.18">Δ<tspan class="var">E</tspan> · Δ<tspan class="var">t</tspan> ≈ ℏ</text>
-
-    <g opacity="0.28">
-
-      <text x="30" y="80" font-size="10">
-
-        <animate attributeName="opacity" values="0.1;0.35;0.1" dur="9s" repeatCount="indefinite"/>
-
-        det. #07 · η=2.1
-
-      </text>
-
-    </g>
-
-  </g>
-
-  *<!-- sparse graph / computational nodes -->*
-
-  <g id="compute-graph" stroke="#475569" stroke-width="0.6" opacity="0.14" fill="none">
+  <g id="compute-graph" transform="translate(880 -20)" stroke="#475569" stroke-width="0.6" opacity="0.14" fill="none">
 
     <line x1="120" y1="230" x2="180" y2="205"/>
 
@@ -289,7 +305,7 @@
 
   </g>
 
-  <g id="compute-nodes" fill="#334155" opacity="0.32">
+  <g id="compute-nodes" transform="translate(880 -20)" fill="#334155" opacity="0.32">
 
     <circle cx="120" cy="230" r="2"/>
 
@@ -301,7 +317,7 @@
 
   </g>
 
-  *<!-- LAYER 1 : Feynman-diagram reference (subtle, bottom-left area) -->*
+  <!-- LAYER 1 : Feynman-diagram reference (subtle, bottom-left area) -->
 
   <g id="feynman" stroke="#475569" stroke-width="0.8" fill="none" opacity="0.16" transform="translate(90,255)">
 
@@ -321,7 +337,7 @@
 
   </g>
 
-  *<!-- LAYER 2 : main scientific system — rings -->*
+  <!-- LAYER 2 : main scientific system — rings -->
 
   <g id="accelerator-rings" fill="none">
 
@@ -333,11 +349,10 @@
 
     <ellipse cx="560" cy="165" rx="180" ry="70" transform="rotate(-15 560 165)" stroke="#7C3AED" stroke-width="0.8" opacity="0.16"/>
 
-    <ellipse cx="180" cy="70" rx="90" ry="40" stroke="#475569" stroke-width="0.7" opacity="0.13"/>
 
   </g>
 
-  *<!-- detector radial marks around interaction point -->*
+  <!-- detector radial marks around interaction point -->
 
   <g id="detector" transform="translate(650,165)" stroke="#334155" stroke-width="0.6">
     <g opacity="0.20">
@@ -348,11 +363,11 @@
       <circle r="30" fill="none" stroke-dasharray="1.5 4"/>
       <circle r="46" fill="none" stroke-dasharray="1 5" opacity="0.6"/>
     </g>
-    <circle r="30" fill="none" stroke="#2563EB" stroke-width="0.9" opacity="0">
+    <circle r="30" class="motion-only" fill="none" stroke="#2563EB" stroke-width="0.9" opacity="0">
       <animate attributeName="opacity" values="0;0;0.48;0.22;0;0" keyTimes="0;0.405;0.438;0.488;0.525;1" dur="8s" repeatCount="indefinite"/>
       <animate attributeName="r" values="30;30;31;34;35;35" keyTimes="0;0.405;0.438;0.488;0.525;1" dur="8s" repeatCount="indefinite"/>
     </circle>
-    <circle r="46" fill="none" stroke="#7C3AED" stroke-width="0.65" opacity="0">
+    <circle r="46" class="motion-only" fill="none" stroke="#7C3AED" stroke-width="0.65" opacity="0">
       <animate attributeName="opacity" values="0;0;0.28;0.10;0;0" keyTimes="0;0.420;0.455;0.500;0.535;1" dur="8s" repeatCount="indefinite"/>
       <animate attributeName="r" values="46;46;47;50;51;51" keyTimes="0;0.420;0.455;0.500;0.535;1" dur="8s" repeatCount="indefinite"/>
     </circle>
@@ -363,24 +378,27 @@
     <!-- LAYER 3 : Quantum Wave-Packet Scattering -->
   <!--
     Visual model: localized Gaussian-like wave packets approach the interaction point,
-    overlap for ~0.4 s with a transient interference field, then reappear as multiple
+    overlap in a transient interference field, then reappear as multiple
     outgoing probability-amplitude branches. This avoids a hard-sphere "bounce" metaphor
     while remaining script-free and compatible with GitHub SVG rendering.
   -->
+  <use href="#channel-guides"/>
   <g id="quantum-wave-scattering" class="anim" pointer-events="none">
 
     <g fill="none" stroke-linecap="round" opacity="0.18">
-      <path d="M 410,84 C 488,101 566,126 650,165" stroke="#2563EB" stroke-width="0.65" stroke-dasharray="1.2 7">
+      <path d="M 410,84 C 500,103 578,132 650,165" stroke="#2563EB" stroke-width="1.1" stroke-dasharray="1.2 7">
         <animate attributeName="stroke-dashoffset" values="0;-32" dur="3.2s" repeatCount="indefinite"/>
       </path>
-      <path d="M 930,246 C 846,225 758,200 650,165" stroke="#7C3AED" stroke-width="0.65" stroke-dasharray="1.2 7">
+      <path d="M 930,246 C 838,225 752,197 650,165" stroke="#7C3AED" stroke-width="1.1" stroke-dasharray="1.2 7">
         <animate attributeName="stroke-dashoffset" values="0;32" dur="3.0s" repeatCount="indefinite"/>
       </path>
     </g>
 
     <!-- Incoming ψ₁ -->
     <g opacity="0">
-      <g><use href="#wavepacket-blue"/></g>
+      <g><use href="#wavepacket-blue"/>
+        <animateTransform attributeName="transform" type="scale" values="1.05 1;1.05 1;0.7 1.2;0.7 1.2" keyTimes="0;0.30;0.42;1" dur="8s" repeatCount="indefinite"/>
+      </g>
       <animateMotion dur="8s" repeatCount="indefinite" calcMode="spline"
         keyTimes="0;0.42;1" keyPoints="0;1;1" keySplines="0.36 0 0.64 1;0 0 1 1"
         rotate="auto" path="M 410,84 C 500,103 578,132 650,165"/>
@@ -390,7 +408,9 @@
 
     <!-- Incoming ψ₂ -->
     <g opacity="0">
-      <g><use href="#wavepacket-violet"/></g>
+      <g><use href="#wavepacket-violet"/>
+        <animateTransform attributeName="transform" type="scale" values="1.05 1;1.05 1;0.7 1.2;0.7 1.2" keyTimes="0;0.30;0.42;1" dur="8s" repeatCount="indefinite"/>
+      </g>
       <animateMotion dur="8s" repeatCount="indefinite" calcMode="spline"
         keyTimes="0;0.42;1" keyPoints="0;1;1" keySplines="0.36 0 0.64 1;0 0 1 1"
         rotate="auto" path="M 930,246 C 838,225 752,197 650,165"/>
@@ -398,20 +418,23 @@
         keyTimes="0;0.06;0.35;0.405;0.455;1" dur="8s" repeatCount="indefinite"/>
     </g>
 
-    <!-- 300–500 ms overlap / interference window -->
+    <!-- Illustrative coherent overlap; fringe motion is clipped to the field. -->
     <g transform="translate(650,165)">
       <g opacity="0">
-      <circle r="27" fill="url(#interactionField)" filter="url(#fieldBlur)"/>
+       <circle r="44" fill="url(#collisionGlow)" opacity="0.45" filter="url(#fieldBlur)"/>
+       <circle r="27" fill="url(#interactionField)" filter="url(#fieldBlur)"/>
       <g clip-path="url(#interactionClip)" fill="none" stroke-linecap="round">
         <g stroke="#2563EB" stroke-width="0.65" opacity="0.62" transform="rotate(24)">
           <path d="M -38,-18 Q 0,-6 38,-18"/><path d="M -40,-10 Q 0,2 40,-10"/>
           <path d="M -40,-2 Q 0,10 40,-2"/><path d="M -40,6 Q 0,18 40,6"/>
           <path d="M -38,14 Q 0,26 38,14"/>
+          <animateTransform attributeName="transform" additive="sum" type="translate" values="0 -4;0 4;0 -4" dur="1.6s" repeatCount="indefinite"/>
         </g>
         <g stroke="#7C3AED" stroke-width="0.65" opacity="0.54" transform="rotate(-28)">
           <path d="M -38,-18 Q 0,-6 38,-18"/><path d="M -40,-10 Q 0,2 40,-10"/>
           <path d="M -40,-2 Q 0,10 40,-2"/><path d="M -40,6 Q 0,18 40,6"/>
           <path d="M -38,14 Q 0,26 38,14"/>
+          <animateTransform attributeName="transform" additive="sum" type="translate" values="0 4;0 -4;0 4" dur="1.6s" repeatCount="indefinite"/>
         </g>
       </g>
       <circle r="4.5" fill="#FFFFFF" opacity="0.72"/>
@@ -424,30 +447,38 @@
       </g>
     </g>
 
-    <!-- Outgoing probability branches ψ′: amplitudes intentionally differ. -->
+    <!-- Schematic outgoing channels: visual opacity is not a calibrated probability. -->
     <g opacity="0">
-      <g transform="scale(0.94)"><use href="#wavepacket-blue"/></g>
+      <g transform="scale(0.94)"><use href="#wavepacket-blue"/>
+        <animateTransform attributeName="transform" type="scale" values="0.65 1;0.65 1;1.5 0.7;1.5 0.7" keyTimes="0;0.455;0.84;1" dur="8s" repeatCount="indefinite"/>
+      </g>
       <animateMotion dur="8s" repeatCount="indefinite" calcMode="spline"
         keyTimes="0;0.455;0.84;1" keyPoints="0;0;1;1" keySplines="0 0 1 1;0.25 0.1 0.55 1;0 0 1 1"
         rotate="auto" path="M 650,165 C 722,129 805,88 900,58"/>
       <animate attributeName="opacity" values="0;0;0.78;0.64;0" keyTimes="0;0.44;0.50;0.82;1" dur="8s" repeatCount="indefinite"/>
     </g>
     <g opacity="0">
-      <g transform="scale(0.84)"><use href="#wavepacket-violet"/></g>
+      <g transform="scale(0.84)"><use href="#wavepacket-violet"/>
+        <animateTransform attributeName="transform" type="scale" values="0.6 0.9;0.6 0.9;1.3 0.65;1.3 0.65" keyTimes="0;0.455;0.86;1" dur="8s" repeatCount="indefinite"/>
+      </g>
       <animateMotion dur="8s" repeatCount="indefinite" calcMode="spline"
         keyTimes="0;0.455;0.86;1" keyPoints="0;0;1;1" keySplines="0 0 1 1;0.25 0.1 0.55 1;0 0 1 1"
         rotate="auto" path="M 650,165 C 755,162 872,155 1012,118"/>
       <animate attributeName="opacity" values="0;0;0.62;0.50;0" keyTimes="0;0.45;0.515;0.84;1" dur="8s" repeatCount="indefinite"/>
     </g>
     <g opacity="0">
-      <g transform="scale(0.78)"><use href="#wavepacket-blue"/></g>
+      <g transform="scale(0.78)"><use href="#wavepacket-blue"/>
+        <animateTransform attributeName="transform" type="scale" values="0.55 0.85;0.55 0.85;1.2 0.6;1.2 0.6" keyTimes="0;0.455;0.82;1" dur="8s" repeatCount="indefinite"/>
+      </g>
       <animateMotion dur="8s" repeatCount="indefinite" calcMode="spline"
         keyTimes="0;0.455;0.82;1" keyPoints="0;0;1;1" keySplines="0 0 1 1;0.25 0.1 0.55 1;0 0 1 1"
-        rotate="auto" path="M 650,165 C 732,198 820,235 910,284"/>
+         rotate="auto" path="M 650,165 C 732,198 820,235 910,264"/>
       <animate attributeName="opacity" values="0;0;0.54;0.42;0" keyTimes="0;0.455;0.53;0.80;1" dur="8s" repeatCount="indefinite"/>
     </g>
     <g opacity="0">
-      <g transform="scale(0.66)"><use href="#wavepacket-violet"/></g>
+      <g transform="scale(0.66)"><use href="#wavepacket-violet"/>
+        <animateTransform attributeName="transform" type="scale" values="0.5 0.75;0.5 0.75;1.05 0.55;1.05 0.55" keyTimes="0;0.455;0.80;1" dur="8s" repeatCount="indefinite"/>
+      </g>
       <animateMotion dur="8s" repeatCount="indefinite" calcMode="spline"
         keyTimes="0;0.455;0.80;1" keyPoints="0;0;1;1" keySplines="0 0 1 1;0.25 0.1 0.55 1;0 0 1 1"
         rotate="auto" path="M 650,165 C 590,196 515,228 430,252"/>
@@ -463,21 +494,36 @@
       </g>
     </g>
 
-    <!-- Very subtle ambient packets across the wider canvas. -->
-    <g opacity="0.30">
-      <g transform="translate(1035,66) scale(0.55) rotate(174)"><use href="#wavepacket-blue"/>
-        <animateTransform attributeName="transform" additive="sum" type="translate" values="0 0;-120 34;-260 64" dur="13s" repeatCount="indefinite"/>
+    <!-- Phase indicators share the same eight-second clock as the scattering. -->
+    <g class="sci-mono annotation" transform="translate(976 242)">
+      <g fill="#2563EB" opacity="0.3">
+        <circle r="2"/><text x="10" y="3">01 / PREPARE</text>
+        <animate attributeName="opacity" values="0.9;0.9;0.3;0.3" keyTimes="0;0.34;0.42;1" dur="8s" repeatCount="indefinite"/>
       </g>
-      <g transform="translate(360,286) scale(0.48) rotate(-18)"><use href="#wavepacket-violet"/>
-        <animateTransform attributeName="transform" additive="sum" type="translate" values="0 0;145 -38;292 -74" dur="15s" repeatCount="indefinite"/>
+      <g fill="#7C3AED" opacity="0.3" transform="translate(0 14)">
+        <circle r="2"/><text x="10" y="3">02 / INTERFERE</text>
+        <animate attributeName="opacity" values="0.3;0.3;1;0.3;0.3" keyTimes="0;0.405;0.455;0.535;1" dur="8s" repeatCount="indefinite"/>
       </g>
-      <g transform="translate(1080,260) scale(0.42) rotate(188)"><use href="#wavepacket-violet"/>
-        <animateTransform attributeName="transform" additive="sum" type="translate" values="0 0;-160 -20;-330 -48" dur="18s" repeatCount="indefinite"/>
+      <g fill="#0891B2" opacity="0.3" transform="translate(0 28)">
+        <circle r="2"/><text x="10" y="3">03 / SCATTER</text>
+        <animate attributeName="opacity" values="0.3;0.3;0.9;0.9;0.3" keyTimes="0;0.455;0.55;0.84;1" dur="8s" repeatCount="indefinite"/>
       </g>
     </g>
   </g>
 
-  *<!-- micro static particles / texture -->*
+  <!-- A genuine static composition: no visible SMIL descendants in reduced motion. -->
+  <g class="still-scattering">
+    <use href="#wavepacket-blue" transform="translate(526 119) rotate(20)"/>
+    <use href="#wavepacket-violet" transform="translate(790 208) rotate(-163)"/>
+    <circle cx="650" cy="165" r="32" fill="url(#interactionField)" opacity="0.7"/>
+    <use href="#wavepacket-blue" transform="translate(792 100) rotate(-26) scale(0.85)"/>
+    <use href="#wavepacket-violet" transform="translate(840 151) rotate(-7) scale(0.75)"/>
+    <use href="#wavepacket-blue" transform="translate(808 232) rotate(25) scale(0.7)"/>
+    <use href="#wavepacket-violet" transform="translate(538 215) rotate(155) scale(0.65)"/>
+    <text x="976" y="263" class="sci-mono annotation" fill="#64748B">SCATTERING / STILL VIEW</text>
+  </g>
+
+  <!-- micro static particles / texture -->
 
   <g id="micro-static">
 
@@ -535,42 +581,48 @@
 
   </g>
 
-  *<!-- small labels near scientific system -->*
+  <!-- small labels near scientific system -->
 
-  <g class="sci-mono" fill="#334155" opacity="0.28">
-    <text x="620" y="103" font-size="9">interaction region</text>
-    <text x="616" y="214" font-size="8.5">Δt ≈ 0.4 s · overlap / interference</text>
+  <g class="sci-mono annotation" fill="#64748B">
+    <text x="650" y="95" text-anchor="middle">COHERENT OVERLAP</text>
+    <text x="650" y="231" text-anchor="middle">interaction region</text>
+    <text x="974" y="96">outgoing channels</text>
+  </g>
+  <g class="math" fill="#334155" font-size="13" opacity="0.8">
+    <text x="650" y="114" text-anchor="middle">|<tspan class="var">ψ</tspan><tspan baseline-shift="sub" font-size="9">out</tspan>⟩ = <tspan class="var">S</tspan>|<tspan class="var">ψ</tspan><tspan baseline-shift="sub" font-size="9">in</tspan>⟩</text>
+  </g>
+  <!-- A compact mathematical footer, separate from the animated field. -->
+  <line x1="430" y1="284" x2="1144" y2="284" stroke="#CBD5E1" opacity="0.55"/>
+  <g class="math" fill="#334155" font-size="13" opacity="0.8">
+    <text x="430" y="306">∫ |<tspan class="var">ψ</tspan>(<tspan class="var">x</tspan>, <tspan class="var">t</tspan>)|<tspan baseline-shift="super" font-size="8">2</tspan> d<tspan class="var">x</tspan> = 1</text>
+    <text x="725" y="306"><tspan class="var">S</tspan><tspan baseline-shift="super" font-size="8">†</tspan><tspan class="var">S</tspan> = <tspan class="roman">I</tspan></text>
+    <text x="970" y="306">Δ<tspan class="var">x</tspan> Δ<tspan class="var">p</tspan> ≥ ℏ/2</text>
   </g>
 
-  <g class="sci-mono" fill="#334155" opacity="0.32">
+  <!-- LEFT: quote block -->
 
-    <text x="905" y="285" font-size="10">wave packet · scattering amplitude</text>
-
-    <text x="612" y="120" font-size="10">ψin → S → ψout</text>
-
-    <text x="700" y="255" font-size="10">|ψ|² · probability amplitude</text>
-
-  </g>
-
-  *<!-- LEFT: quote block -->*
-
-  <g id="quote-block" transform="translate(56,120)">
+  <g id="quote-block" transform="translate(56,130)">
 
     <line x1="0" y1="-26" x2="0" y2="92" stroke="#CBD5E1" stroke-width="1.2" opacity="0.6"/>
 
-    <text x="22" y="-2" class="quote-serif" font-size="20" fill="#1F2937" letter-spacing="0.2">
+    <text x="22" y="-2" class="quote-serif" font-size="23" fill="#1F2937" letter-spacing="0.1">
 
       <tspan x="22" dy="0">“What I cannot create,</tspan>
 
-      <tspan x="22" dy="26">I do not understand.”</tspan>
+      <tspan x="22" dy="31">I do not understand.”</tspan>
 
     </text>
 
-    <text x="22" y="66" class="sci-mono" font-size="12" fill="#64748B" letter-spacing="0.5">— RICHARD FEYNMAN</text>
+    <text x="22" y="66" class="sci-mono" font-size="10" fill="#64748B" letter-spacing="1">— RICHARD FEYNMAN</text>
 
   </g>
 
-  *<!-- fine border frame -->*
+  <g transform="translate(78 245)">
+    <text class="math" font-size="14" fill="#334155" opacity="0.85"><tspan class="var">θ</tspan><tspan baseline-shift="sub" font-size="9">t+1</tspan> = <tspan class="var">θ</tspan><tspan baseline-shift="sub" font-size="9">t</tspan> − <tspan class="var">η</tspan> ∇<tspan baseline-shift="sub" font-size="9" class="var">θ</tspan> ℒ(<tspan class="var">θ</tspan><tspan baseline-shift="sub" font-size="9">t</tspan>)</text>
+    <text y="20" class="sci-mono" font-size="8" letter-spacing=".14em" fill="#64748B">LEARN · MODEL · UNDERSTAND</text>
+  </g>
+
+  <!-- fine border frame -->
 
   <rect x="0.5" y="0.5" width="1199" height="319" fill="none" stroke="#E2E4DF" stroke-width="1"/>
 

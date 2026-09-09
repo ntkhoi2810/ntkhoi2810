@@ -1,209 +1,153 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="896" height="380" viewBox="0 0 896 380" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="896" height="380" viewBox="0 0 896 380" fill="none" role="img" aria-labelledby="title description">
+  <title id="title">AI Research — Skill Atom</title>
+  <desc id="description">Python, NumPy, PyTorch, TensorFlow, Scikit-Learn, Deep Learning, Representation Learning and Knowledge Graph orbit an AI Research nucleus on three intersecting elliptical tracks.</desc>
 
   <style>
     :root {
-      /* Solar System Pastel Palette - Light Mode */
-      --sun-core: #d97706;
-      --sun-glow: rgba(245, 158, 11, 0.25);
-      --sun-ring: #f59e0b;
-
-      --mercury: #64748b;    /* NumPy: Slate Pearlescent */
-      --venus: #ca8a04;      /* Scikit-Learn: Golden Cream */
-      --earth: #0284c7;      /* Python: Cyan Ocean Blue */
-      --mars: #e11d48;       /* PyTorch: Coral Crimson */
-      --jupiter: #ea580c;    /* TensorFlow: Amber Terracotta */
-      --saturn: #d97706;     /* Deep Learning: Warm Sand Gold */
-      --uranus: #0d9488;     /* Representation Learning: Aquamarine Cyan */
-      --neptune: #4f46e5;    /* Knowledge Graph: Celestial Cosmic Indigo */
-
-      --orbit-line: #e2e8f0;
-      --orbit-line-dashed: #cbd5e1;
-      --cosmic-star: #cbd5e1;
+      --core: #6d28d9;
+      --core-light: #a78bfa;
+      --surface: #ffffff;
+      --track: #94a3b8;
+      --muted: #64748b;
+      --python: #0284c7;
+      --numpy: #64748b;
+      --pytorch: #e11d48;
+      --tensorflow: #ea580c;
+      --scikit: #a16207;
+      --deep: #b45309;
+      --representation: #0d9488;
+      --knowledge: #4f46e5;
       --font-mono: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
     }
-
     @media (prefers-color-scheme: dark) {
       :root {
-        /* Solar System Pastel Palette - Dark Mode (Luminous Pastels) */
-        --sun-core: #fde047;
-        --sun-glow: rgba(253, 224, 71, 0.25);
-        --sun-ring: #facc15;
-
-        --mercury: #cbd5e1;    /* NumPy: Pale Silver Slate */
-        --venus: #fef08a;      /* Scikit-Learn: Soft Cream Yellow */
-        --earth: #38bdf8;      /* Python: Luminous Sky Blue */
-        --mars: #fb7185;       /* PyTorch: Pastel Rose / Coral */
-        --jupiter: #fb923c;    /* TensorFlow: Pastel Peach Amber */
-        --saturn: #fcd34d;     /* Deep Learning: Pastel Golden Sand */
-        --uranus: #5eead4;     /* Representation Learning: Pastel Mint Cyan */
-        --neptune: #a5b4fc;    /* Knowledge Graph: Pastel Celestial Violet */
-
-        --orbit-line: #1e293b;
-        --orbit-line-dashed: #334155;
-        --cosmic-star: #475569;
+        --core: #c4b5fd;
+        --core-light: #8b5cf6;
+        --surface: #0d1117;
+        --track: #64748b;
+        --muted: #94a3b8;
+        --python: #38bdf8;
+        --numpy: #cbd5e1;
+        --pytorch: #fb7185;
+        --tensorflow: #fb923c;
+        --scikit: #fef08a;
+        --deep: #fcd34d;
+        --representation: #5eead4;
+        --knowledge: #a5b4fc;
       }
     }
-
-    /* ── Orbit Tracks ── */
-    .orbit-track {
-      fill: none;
-      stroke: var(--orbit-line);
-      stroke-width: 0.8;
-    }
-    .orbit-track-dashed {
-      fill: none;
-      stroke: var(--orbit-line-dashed);
-      stroke-width: 0.8;
-      stroke-dasharray: 4 6;
-    }
-
-    /* ── Center Core (Sun: AI Research) ── */
-    .core-text {
-      font-family: var(--font-mono);
-      font-weight: 700;
-      font-size: 13px;
-      letter-spacing: 0.16em;
-      fill: var(--sun-core);
+    .track { stroke: var(--track); stroke-width: 1; opacity: .35; }
+    .track-accent { stroke: var(--core-light); stroke-width: 1.5; stroke-dasharray: 3 13; opacity: .35; }
+    .skill { font: 600 11px var(--font-mono); fill: currentColor; }
+    .skill text {
       text-anchor: middle;
-      dominant-baseline: central;
-      animation: core-pulse 4s ease-in-out infinite alternate;
-      transform-origin: 448px 190px;
+      paint-order: stroke fill;
+      stroke: var(--surface);
+      stroke-width: 4px;
+      stroke-linejoin: round;
     }
-    @keyframes core-pulse {
-      0% { opacity: 0.88; transform: scale(0.97); }
-      100% { opacity: 1; transform: scale(1.03); }
-    }
-
+    .electron-halo { fill: currentColor; opacity: .12; }
+    .electron { fill: currentColor; stroke: var(--surface); stroke-width: 1.5; }
+    .python { color: var(--python); }
+    .numpy { color: var(--numpy); }
+    .pytorch { color: var(--pytorch); }
+    .tensorflow { color: var(--tensorflow); }
+    .scikit { color: var(--scikit); }
+    .deep { color: var(--deep); }
+    .representation { color: var(--representation); }
+    .knowledge { color: var(--knowledge); }
     .core-ring {
-      fill: none;
-      stroke: var(--sun-ring);
-      stroke-width: 0.8;
-      animation: ring-pulse 4s ease-in-out infinite;
-      transform-origin: 448px 190px;
+      stroke: var(--core-light);
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: pulse 5s ease-in-out infinite;
     }
-    @keyframes ring-pulse {
-      0% { transform: scale(0.9); opacity: 0.5; }
-      50% { transform: scale(1.15); opacity: 0.15; }
-      100% { transform: scale(0.9); opacity: 0.5; }
+    .core-title { fill: var(--core); font: 700 14px var(--font-mono); text-anchor: middle; }
+    .caption { fill: var(--muted); font: 9px var(--font-mono); letter-spacing: .2em; text-anchor: middle; }
+    .static-skills { display: none; }
+    @keyframes pulse {
+      0%, 100% { transform: scale(.95); opacity: .35; }
+      50% { transform: scale(1.1); opacity: .12; }
     }
-
-
-    /* ── Planet Typography and Dots ── */
-    .planet-text {
-      font-family: var(--font-mono);
-      font-weight: 600;
-      font-size: 11.5px;
-      letter-spacing: 0.04em;
-      dominant-baseline: central;
-    }
-
-    /* Planet Specific Theme Classes */
-    .p-python { fill: var(--earth); }
-    .p-numpy { fill: var(--mercury); }
-    .p-pytorch { fill: var(--mars); }
-    .p-tensorflow { fill: var(--jupiter); }
-    .p-scikit { fill: var(--venus); }
-    .p-deeplearning { fill: var(--saturn); }
-    .p-representation { fill: var(--uranus); }
-    .p-knowledgegraph { fill: var(--neptune); }
-
-    /* ── Cosmic background stars ── */
-    .cosmic-dot {
-      fill: var(--cosmic-star);
-      opacity: 0.4;
+    @media (prefers-reduced-motion: reduce) {
+      .core-ring { animation: none; opacity: .3; }
+      .moving-skills { display: none; }
+      .static-skills { display: inline; }
     }
   </style>
 
-  <!-- Cosmic subtle grid dots -->
-  <g class="cosmic-dot">
-    <circle cx="80" cy="50" r="1"/><circle cx="820" cy="60" r="1"/>
-    <circle cx="120" cy="330" r="1"/><circle cx="780" cy="320" r="1"/>
-    <circle cx="448" cy="30" r="0.8"/><circle cx="448" cy="350" r="0.8"/>
+  <defs>
+    <!-- All electrons share the exact geometry of their visible orbit. -->
+    <path id="orbit" d="M 270 0 A 270 74 0 1 1 -270 0 A 270 74 0 1 1 270 0"/>
+    <radialGradient id="nucleus-glow">
+      <stop stop-color="var(--core-light)" stop-opacity=".2"/>
+      <stop offset="1" stop-color="var(--core-light)" stop-opacity="0"/>
+    </radialGradient>
+    <g id="electron">
+      <circle r="10" class="electron-halo"/>
+      <circle r="4" class="electron"/>
+    </g>
+    <g id="python" class="skill python"><use xlink:href="#electron"/><text y="-15">Python</text></g>
+    <g id="numpy" class="skill numpy"><use xlink:href="#electron"/><text y="-15">NumPy</text></g>
+    <g id="pytorch" class="skill pytorch"><use xlink:href="#electron"/><text y="-15">PyTorch</text></g>
+    <g id="tensorflow" class="skill tensorflow"><use xlink:href="#electron"/><text y="-15">TensorFlow</text></g>
+    <g id="scikit" class="skill scikit"><use xlink:href="#electron"/><text y="-15">Scikit-Learn</text></g>
+    <g id="deep" class="skill deep"><use xlink:href="#electron"/><text y="-15">Deep Learning</text></g>
+    <g id="representation" class="skill representation"><use xlink:href="#electron"/><text y="-15">Representation Learning</text></g>
+    <g id="knowledge" class="skill knowledge"><use xlink:href="#electron"/><text y="-15">Knowledge Graph</text></g>
+  </defs>
+
+  <!-- Three intersecting orbital planes, centered on the research nucleus. -->
+  <g transform="translate(448 190)">
+    <circle r="100" fill="url(#nucleus-glow)"/>
+    <g class="track">
+      <use xlink:href="#orbit"/>
+      <use xlink:href="#orbit" transform="rotate(30)"/>
+      <use xlink:href="#orbit" transform="rotate(-30)"/>
+    </g>
+    <use xlink:href="#orbit" transform="rotate(30)" class="track-accent"/>
+
+    <!-- A compact nucleus masks the tracks beneath its typography. -->
+    <circle r="63" class="core-ring"/>
+    <circle r="54" fill="var(--surface)" stroke="var(--core-light)" stroke-opacity=".45"/>
+    <circle r="49" fill="url(#nucleus-glow)"/>
+    <g fill="var(--core-light)">
+      <circle cx="-9" cy="-28" r="3" opacity=".6"/>
+      <circle cy="-31" r="4" opacity=".9"/>
+      <circle cx="9" cy="-28" r="3" opacity=".6"/>
+    </g>
+    <text class="core-title" y="-4">AI</text>
+    <text class="core-title" y="15">Research</text>
+    <text class="caption" y="34" style="font-size: 7px">NUCLEUS</text>
+
+    <!-- Counter-rotation keeps labels horizontal on the tilted planes. -->
+    <g class="moving-skills">
+      <g>
+        <g><animateMotion dur="24s" begin="-2s" repeatCount="indefinite"><mpath xlink:href="#orbit"/></animateMotion><use xlink:href="#python"/></g>
+        <g><animateMotion dur="24s" begin="-10s" repeatCount="indefinite"><mpath xlink:href="#orbit"/></animateMotion><use xlink:href="#numpy"/></g>
+        <g><animateMotion dur="24s" begin="-18s" repeatCount="indefinite"><mpath xlink:href="#orbit"/></animateMotion><use xlink:href="#scikit"/></g>
+      </g>
+      <g transform="rotate(30)">
+        <g><animateMotion dur="32s" begin="-1s" repeatCount="indefinite"><mpath xlink:href="#orbit"/></animateMotion><use xlink:href="#pytorch" transform="rotate(-30)"/></g>
+        <g><animateMotion dur="32s" begin="-11.6667s" repeatCount="indefinite"><mpath xlink:href="#orbit"/></animateMotion><use xlink:href="#tensorflow" transform="rotate(-30)"/></g>
+        <g><animateMotion dur="32s" begin="-22.3333s" repeatCount="indefinite"><mpath xlink:href="#orbit"/></animateMotion><use xlink:href="#deep" transform="rotate(-30)"/></g>
+      </g>
+      <g transform="rotate(-30)">
+        <g><animateMotion dur="40s" begin="-5s" repeatCount="indefinite"><mpath xlink:href="#orbit"/></animateMotion><use xlink:href="#representation" transform="rotate(30)"/></g>
+        <g><animateMotion dur="40s" begin="-25s" repeatCount="indefinite"><mpath xlink:href="#orbit"/></animateMotion><use xlink:href="#knowledge" transform="rotate(30)"/></g>
+      </g>
+    </g>
+
+    <!-- A readable still composition when the viewer requests less motion. -->
+    <g class="static-skills">
+      <use xlink:href="#python" x="270"/>
+      <use xlink:href="#numpy" x="-270"/>
+      <use xlink:href="#scikit" y="-74"/>
+      <use xlink:href="#pytorch" x="234" y="135"/>
+      <use xlink:href="#tensorflow" x="-234" y="-135"/>
+      <use xlink:href="#deep" x="-37" y="64"/>
+      <use xlink:href="#representation" x="234" y="-135"/>
+      <use xlink:href="#knowledge" x="-234" y="135"/>
+    </g>
   </g>
-
-  <!-- ════════ ORBITAL TRACKS ════════ -->
-  <ellipse cx="448" cy="190" rx="115" ry="46" class="orbit-track"/>
-  <ellipse cx="448" cy="190" rx="195" ry="78" class="orbit-track-dashed"/>
-  <ellipse cx="448" cy="190" rx="280" ry="112" class="orbit-track"/>
-  <ellipse cx="448" cy="190" rx="365" ry="144" class="orbit-track-dashed"/>
-
-
-  <!-- ════════ CENTER SUN: AI RESEARCH ════════ -->
-  <ellipse cx="448" cy="190" rx="72" ry="24" class="core-ring"/>
-  <circle cx="365" cy="190" r="2.5" class="core-dot"/>
-  <circle cx="531" cy="190" r="2.5" class="core-dot"/>
-  <text x="448" y="190" class="core-text">AI Research</text>
-
-
-  <!-- ════════ ORBIT 1: INNER (Python - Earth, NumPy - Mercury) ════════ -->
-  <!-- Planet: Python (Earth Cyan-Blue) -->
-  <g>
-    <animateMotion dur="20s" repeatCount="indefinite"
-      path="M 563 190 A 115 46 0 1 1 333 190 A 115 46 0 1 1 563 190"/>
-    <circle cx="0" cy="0" r="2.8" class="p-python"/>
-    <text x="7" y="0" class="planet-text p-python">Python</text>
-  </g>
-
-  <!-- Planet: NumPy (Mercury Slate) -->
-  <g>
-    <animateMotion dur="20s" begin="-10s" repeatCount="indefinite"
-      path="M 563 190 A 115 46 0 1 1 333 190 A 115 46 0 1 1 563 190"/>
-    <circle cx="0" cy="0" r="2.5" class="p-numpy"/>
-    <text x="6" y="0" class="planet-text p-numpy">NumPy</text>
-  </g>
-
-
-  <!-- ════════ ORBIT 2: MID-INNER (PyTorch - Mars, TensorFlow - Jupiter, Scikit - Venus) ════════ -->
-  <!-- Planet: PyTorch (Mars Coral Rose) -->
-  <g>
-    <animateMotion dur="32s" repeatCount="indefinite"
-      path="M 643 190 A 195 78 0 1 1 253 190 A 195 78 0 1 1 643 190"/>
-    <circle cx="0" cy="0" r="3" class="p-pytorch"/>
-    <text x="7" y="0" class="planet-text p-pytorch">PyTorch</text>
-  </g>
-
-  <!-- Planet: TensorFlow (Jupiter Peach Amber) -->
-  <g>
-    <animateMotion dur="32s" begin="-10.66s" repeatCount="indefinite"
-      path="M 643 190 A 195 78 0 1 1 253 190 A 195 78 0 1 1 643 190"/>
-    <circle cx="0" cy="0" r="2.8" class="p-tensorflow"/>
-    <text x="6" y="0" class="planet-text p-tensorflow">TensorFlow</text>
-  </g>
-
-  <!-- Planet: Scikit-Learn (Venus Cream Yellow) -->
-  <g>
-    <animateMotion dur="32s" begin="-21.33s" repeatCount="indefinite"
-      path="M 643 190 A 195 78 0 1 1 253 190 A 195 78 0 1 1 643 190"/>
-    <circle cx="0" cy="0" r="2.5" class="p-scikit"/>
-    <text x="6" y="0" class="planet-text p-scikit">Scikit-Learn</text>
-  </g>
-
-
-  <!-- ════════ ORBIT 3: MID-OUTER (Deep Learning - Saturn, Representation - Uranus) ════════ -->
-  <!-- Planet: Deep Learning (Saturn Golden Sand) -->
-  <g>
-    <animateMotion dur="45s" repeatCount="indefinite"
-      path="M 728 190 A 280 112 0 1 1 168 190 A 280 112 0 1 1 728 190"/>
-    <circle cx="0" cy="0" r="3" class="p-deeplearning"/>
-    <text x="7" y="0" class="planet-text p-deeplearning">Deep Learning</text>
-  </g>
-
-  <!-- Planet: Representation Learning (Uranus Mint Cyan) -->
-  <g>
-    <animateMotion dur="45s" begin="-22.5s" repeatCount="indefinite"
-      path="M 728 190 A 280 112 0 1 1 168 190 A 280 112 0 1 1 728 190"/>
-    <circle cx="0" cy="0" r="3" class="p-representation"/>
-    <text x="7" y="0" class="planet-text p-representation">Representation Learning</text>
-  </g>
-
-
-  <!-- ════════ ORBIT 4: OUTER (Knowledge Graph - Neptune Celestial Violet) ════════ -->
-  <!-- Planet: Knowledge Graph (Neptune Celestial Violet/Indigo) -->
-  <g>
-    <animateMotion dur="58s" repeatCount="indefinite"
-      path="M 813 190 A 365 144 0 1 1 83 190 A 365 144 0 1 1 813 190"/>
-    <circle cx="0" cy="0" r="3.5" class="p-knowledgegraph"/>
-    <text x="8" y="0" class="planet-text p-knowledgegraph">Knowledge Graph</text>
-  </g>
-
 </svg>

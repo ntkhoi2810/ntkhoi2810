@@ -2,18 +2,32 @@
   <img src="research_banner_v8_quantum_wavepacket_scattering.svg" width="100%" alt="Research banner — computer science, AI, mathematics and physics, illustrated with quantum wave-packet scattering" />
 </p>
 
+<div align="center">
+  <a href="https://aisq.dev/members/khoint">
+    <img src="https://aisq.dev/badges/initiator-2026.svg" alt="AIAI Initiator 2026" />
+  </a>
+</div>
+
 <br />
 
-<p align="center"><sub>RESEARCH · LEARNING · TEACHING</sub></p>
+<div align="center">
 
-<h1 align="center">AI Researcher &amp; Teaching Assistant</h1>
+<sup>RESEARCH · LEARNING · DISCOVERY</sup>
 
-<p align="center">Vietnam &nbsp;·&nbsp; Ton Duc Thang University</p>
+# AI Researcher & Teaching Assistant
 
-<p align="center">
-  Exploring knowledge graphs and representation learning<br />
-  through deep learning research.
-</p>
+<sub>
+KNOWLEDGE GRAPHS &nbsp; / &nbsp; REPRESENTATION LEARNING &nbsp; / &nbsp; DEEP LEARNING
+</sub>
+
+<br><br>
+
+*From structure to representation, from representation to intelligence.*
+
+<br>
+
+</div>
+
 
 <br />
 
@@ -31,9 +45,9 @@ I'm an AI researcher based in Vietnam, with a focus on **knowledge graphs** and 
 
 ### Background
 
-- **Current role** — Teaching Assistant, Ton Duc Thang University
-- **Education** — Ton Duc Thang University (TDTU)
-- **Languages** — Vietnamese (native) · English (CEFR B2)
+- **Current role:** Teaching Assistant, Ton Duc Thang University
+- **Education:** Bachelor of Computer Science at Ton Duc Thang University
+- **Languages:** Vietnamese (native), English (CEFR B2)
 
 <br />
 

@@ -12,12 +12,10 @@
 
 <div align="center">
 
-<sup>AI RESEARCH · VIETNAM</sup>
-
 # Structure. Representation. Intelligence.
 
 **AI Researcher & Teaching Assistant**<br />
-<sub>Ton Duc Thang University</sub>
+<sub>***Ton Duc Thang University***</sub>
 
 <br />
 
@@ -54,7 +52,6 @@ Alongside research, I work as a **Teaching Assistant at Ton Duc Thang University
 
 ### At a glance
 
-**Teaching** &nbsp; Teaching Assistant · Ton Duc Thang University<br />
 **Education** &nbsp; Bachelor of Computer Science · Ton Duc Thang University<br />
 **Languages** &nbsp; Vietnamese · Native &nbsp; / &nbsp; English · CEFR B2
 

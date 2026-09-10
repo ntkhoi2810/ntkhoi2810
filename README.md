@@ -12,9 +12,14 @@
 
 <div align="center">
 
-<sup>RESEARCH · LEARNING · DISCOVERY</sup>
+<sup>AI RESEARCH · VIETNAM</sup>
 
-# AI Researcher & Teaching Assistant
+# Structure. Representation. Intelligence.
+
+**AI Researcher & Teaching Assistant**<br />
+<sub>Ton Duc Thang University</sub>
+
+<br />
 
 <sub>
 KNOWLEDGE GRAPHS &nbsp; / &nbsp; REPRESENTATION LEARNING &nbsp; / &nbsp; DEEP LEARNING
@@ -22,7 +27,7 @@ KNOWLEDGE GRAPHS &nbsp; / &nbsp; REPRESENTATION LEARNING &nbsp; / &nbsp; DEEP LE
 
 <br><br>
 
-*From structure to representation, from representation to intelligence.*
+*Exploring how connections become knowledge — and knowledge becomes intelligence.*
 
 <br>
 
@@ -31,29 +36,33 @@ KNOWLEDGE GRAPHS &nbsp; / &nbsp; REPRESENTATION LEARNING &nbsp; / &nbsp; DEEP LE
 
 <br />
 
-### About
+### A little about me
 
-I'm an AI researcher based in Vietnam, with a focus on **knowledge graphs** and **representation learning**. I currently serve as a **Teaching Assistant at Ton Duc Thang University**, alongside my research interests in deep learning.
+I'm an AI researcher based in Vietnam, interested in how we **structure knowledge** and **learn meaningful representations**. My research focuses on knowledge graphs and representation learning, with a broader interest in deep learning.
 
-<br />
-
-### Research interests
-
-**Deep Learning** &nbsp; / &nbsp; **Knowledge Graph** &nbsp; / &nbsp; **Representation Learning**
+Alongside research, I work as a **Teaching Assistant at Ton Duc Thang University** — bringing learning and teaching into the same conversation.
 
 <br />
 
-### Background
+### Questions that drive my research
 
-- **Current role:** Teaching Assistant, Ton Duc Thang University
-- **Education:** Bachelor of Computer Science at Ton Duc Thang University
-- **Languages:** Vietnamese (native), English (CEFR B2)
+- **Knowledge graphs** — How can relationships give knowledge its structure?
+- **Representation learning** — How can models capture what matters in data?
+- **Deep learning** — How can learned representations support more capable models?
 
 <br />
 
-### Tools & technologies
+### At a glance
 
-Python, NumPy, scikit-learn, PyTorch and TensorFlow — connected to my research interests below.
+**Teaching** &nbsp; Teaching Assistant · Ton Duc Thang University<br />
+**Education** &nbsp; Bachelor of Computer Science · Ton Duc Thang University<br />
+**Languages** &nbsp; Vietnamese · Native &nbsp; / &nbsp; English · CEFR B2
+
+<br />
+
+### Research toolkit
+
+**Python** at the core. **NumPy** and **scikit-learn** for working with data. **PyTorch** and **TensorFlow** for deep learning.
 
 <p align="center">
   <img src="skills.svg" width="100%" alt="AI research ecosystem — Python, NumPy, scikit-learn, PyTorch and TensorFlow, alongside deep learning, representation learning and knowledge graphs" />
